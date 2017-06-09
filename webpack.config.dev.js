@@ -20,7 +20,10 @@ module.exports = {
     devtool: "cheap-module-eval-source-map",
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoErrorsPlugin()
+        new webpack.NoErrorsPlugin(),
+        new webpack.DefinePlugin({
+            'process.env.API_URL': JSON.stringify("http://localhost:5000")
+        })
     ],
     module: {
         loaders: [{
